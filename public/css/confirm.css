@@ -21,9 +21,6 @@ input {
   display: inline-block;
 }
 
-div {
-  padding: 7px 7px 60px 7px;
-}
 
 a {
   color: #000000;
@@ -34,11 +31,19 @@ a {
   margin: 0 auto;
   max-width: 800px;
 }
+.row {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+}
 
 /* ----------------内容確認部分---------------- */
 .form-title {
   font-weight: bold;
   width: 150px;
+  text-align: left;
+  margin-right: 50px;
 }
 
 input {
@@ -47,11 +52,7 @@ input {
   border-radius: 5px;
 }
 
-.opinion {
-  width: 70%;
-  vertical-align: top;
-  line-height: 25px;
-}
+
 
 /* ----------------ボタン部分----------------- */
 .confirm {

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <form action="{{ route('form.show') }}" method="GET" class="thanks">
+  <form action="/" method="GET" class="thanks">
     <div>ご意見いただきありがとうございました。</div>
     <button type="submit">トップページへ</button>
   </form>

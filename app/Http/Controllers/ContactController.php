@@ -35,7 +35,7 @@ class ContactController extends Controller
   {
     //何かしらの検索結果を入れなければエラーとなるため、検索結果0となるように検索
     $result = Contact::where('fullname', "")->paginate(10);
-    return view('management', ['forms' => $result]);
+    return view('manage', ['forms' => $result]);
   }
   public function search(Request $request)
   {
@@ -48,25 +48,25 @@ class ContactController extends Controller
           ->whereDate('created_at', '<=', "{$request->created_to}")
           ->where('email', 'LIKE', "%{$request->email}%")
           ->paginate(10);
-        return view('management', ['forms' => $result]);
+        return view('manage', ['forms' => $result]);
       } elseif ($request->created_from !== null && $request->created_to == null) {
         $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
           ->whereDate('created_at', '>=', "{$request->created_from}")
           ->where('email', 'LIKE', "%{$request->email}%")
           ->paginate(10);
-        return view('management', ['forms' => $result]);
+        return view('manage', ['forms' => $result]);
       } elseif ($request->created_from == null && $request->created_to == null) {
         $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
           ->where('email', 'LIKE', "%{$request->email}%")
           ->paginate(10);
-        return view('management', ['forms' => $result]);
+        return view('manage', ['forms' => $result]);
       } else {
         $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
           ->whereDate('created_at', '<=', "{$request->created_to}")
           ->whereDate('created_at', '>=', "{$request->created_from}")
           ->where('email', 'LIKE', "%{$request->email}%")
           ->paginate(10);
-        return view('management', ['forms' => $result]);
+        return view('manage', ['forms' => $result]);
       }
     }
     if ($request->created_from == null && $request->created_to !== null) {
@@ -75,20 +75,20 @@ class ContactController extends Controller
         ->whereDate('created_at', '<=', "{$request->created_to}")
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      return view('management', ['forms' => $result]);
+      return view('manage', ['forms' => $result]);
     } elseif ($request->created_from !== null && $request->created_to == null) {
       $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
         ->where('gender', $request->gender)
         ->whereDate('created_at', '>=', "{$request->created_from}")
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      return view('management', ['forms' => $result]);
+      return view('manage', ['forms' => $result]);
     } elseif ($request->created_from == null && $request->created_to == null) {
       $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
         ->where('gender', $request->gender)
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      return view('management', ['forms' => $result]);
+      return view('manage', ['forms' => $result]);
     } else {
       $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
         ->where('gender', $request->gender)
@@ -96,7 +96,7 @@ class ContactController extends Controller
         ->whereDate('created_at', '>=', "{$request->created_from}")
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      return view('management', ['forms' => $result]);
+      return view('manage', ['forms' => $result]);
     }
   }
   public function delete(Request $request)

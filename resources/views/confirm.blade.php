@@ -53,8 +53,8 @@
       <input type="hidden" name="building_name" value="{{ $inputs['building_name'] }}" />
     </div>
     <div class="row">
-      <span class="form-title">ご意見</span>
-      <span class="opinion">{{ $inputs['opinion'] }}</span>
+      <label class="form-title">ご意見</label>
+      {{ $inputs['opinion'] }}
       <input type="hidden" name="opinion" value="{{ $inputs['opinion'] }}">
     </div>
     <div class="confirm">
