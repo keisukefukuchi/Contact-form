@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/reset.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/confirm.css') }}">
   <title>内容確認画面</title>
 </head>
 
